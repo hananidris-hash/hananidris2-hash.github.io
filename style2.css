@@ -1,13 +1,14 @@
 /* ====== THEME VARIABLES ====== */
 :root {
-    --primary-color: #48182F;   /* Blackberry */
-    --secondary-color: #D4CBC4; /* Moonstone */
-    --bg-color: #FFFFFF;
-    --text-color: #1f1f1f;
-    --text-light: #6b6b6b;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --primary-color: #38BDF8;   /* Bright Blue */
+    --secondary-color: #0F2A44; /* Navy */
+    --bg-color: #061826;        /* Dark Navy Background */
+    --card-bg: #0B2239;
+    --text-color: #F8FAFC;
+    --text-light: #CBD5E1;
+    --border-color: rgba(56, 189, 248, 0.35);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     --transition: all 0.3s ease;
-    
 }
 
 /* ====== RESET ====== */
@@ -23,7 +24,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--bg-color);
+    background: linear-gradient(135deg, #061826 0%, #0B2239 55%, #0F2A44 100%);
     color: var(--text-color);
 }
 
@@ -43,7 +44,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(6, 24, 38, 0.96);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     z-index: 1000;
@@ -181,6 +182,7 @@ body {
 
 .info-item {
     background: var(--secondary-color);
+    border: 1px solid var(--border-color);
     padding: 1rem 2.5rem;
     border-radius: 30px;
     transition: transform 0.5s ease;
@@ -221,7 +223,7 @@ body {
 /* Icon */
 .info-title i {
     font-size: 1.1rem;
-    color: rgb(72, 24, 47);
+    color: #38BDF8;
 }
 
 
@@ -250,8 +252,8 @@ body {
 
 /* ====== EDUCATION ====== */
 .edu-card {
-    background: #FFFFFF; /* white box */
-    border: 3px solid var(--secondary-color); /* moonshell border */
+    background: var(--card-bg); /* navy card */
+    border: 3px solid var(--border-color); /* blue border */
     padding: 1rem 1.2rem;
     border-radius: 25px;
     transition: transform 0.3s ease;
@@ -321,12 +323,12 @@ body {
     height: 16px;
     border-radius: 50%;
     background: var(--primary-color);
-    border: 3px solid #fff;
+    border: 3px solid var(--card-bg);
     box-shadow: var(--shadow);
 }
 
 .timeline-content {
-    background: #fff;
+    background: var(--card-bg);
     padding: 1.2rem 1.4rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -359,8 +361,8 @@ body {
 .core-skiild-card,
 .skills-column,
 .TechnicalSkills-card {
-    background: #FFFFFF;
-    border: 3px solid var(--secondary-color);
+    background: var(--card-bg);
+    border: 3px solid var(--border-color);
     padding: 1.5rem;
     border-radius: 25px;
     transition: transform 0.3s ease;
@@ -400,7 +402,9 @@ body {
 }
 
 .skill-tag {
-    background: var(--secondary-color);
+    background: rgba(56, 189, 248, 0.14);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     padding: 0.4rem 0.8rem;
     border-radius: 999px;
     font-size: 0.79rem;
@@ -449,7 +453,7 @@ body {
   position: relative;
   width: 100%;
   height: 10px;
-  background: #eee;
+  background: rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -484,7 +488,7 @@ body {
 
 /* --- PROJECT CARD STYLE --- */
 .project-card {
-  background: #fff;
+  background: var(--card-bg);
   border: none; /* remove MoonShell border */
   border-top: 6px solid var(--primary-color); /* Blackberry top line only */
   border-radius: 15px; /* smooth rounded corners */
@@ -527,8 +531,9 @@ body {
 }
 
 .project-tag {
-  background: var(--secondary-color);
-  color: var(--primary-color);
+  background: rgba(56, 189, 248, 0.14);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   padding: 0.4rem 0.9rem;
   border-radius: 999px;
   font-size: 0.8rem;
@@ -608,7 +613,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    background: #fff;
+    background: var(--card-bg);
     padding: 0.8rem 1.2rem;
     border-radius: 999px;
     box-shadow: var(--shadow);
@@ -671,7 +676,7 @@ body {
 .section-divider {
     width: 100%;
     height: 1px;
-    background: #48182F;
+    background: var(--primary-color);
     margin: 60px 0;
 
     transform: scaleX(0);
@@ -713,7 +718,7 @@ body {
     border-radius: 25px !important;
     text-align: center !important;
     box-sizing: border-box !important;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: var(--shadow) !important;
   }
 
   .edu-card h3 {
@@ -849,4 +854,27 @@ body {
 .prog-icon {
   color: var(--primary-color);
   font-size: 1.3rem;
+}
+
+/* ====== BLUE & NAVY FINAL OVERRIDES ====== */
+a { color: var(--primary-color); }
+.edu-card, .core-skiild-card, .skills-column, .TechnicalSkills-card, .project-card, .contact-item, .timeline-content {
+  background: var(--card-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+.project-card {
+  border-top: 6px solid var(--primary-color) !important;
+}
+.nav-links a, .logo, .section-title, .highlight, .edu-card h3, .project-card h3,
+.info-label, .contact-item i, .project-link, .percent {
+  color: var(--primary-color) !important;
+}
+.hero-intro, .info-detail, .edu-detail, .footer, .hero-top {
+  color: var(--text-light) !important;
+}
+.skill-tag, .project-tag {
+  background: rgba(56, 189, 248, 0.14) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-color) !important;
 }
